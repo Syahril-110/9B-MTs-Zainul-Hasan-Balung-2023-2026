@@ -10,31 +10,34 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f5;
-    color: #222;
-    overflow-x: hidden;
+    background: #111;
+    color: white;
 }
 
-/* GARIS MERAH ATAS */
+
+/* GARIS ATAS */
+
 .top-line {
-    height: 7px;
     width: 100%;
+    height: 5px;
     background: #b40000;
 }
 
-/* NAVBAR */
+
+/* HEADER */
+
 header {
-    width: 100%;
-    height: 75px;
+    height: 70px;
+    background: #050505;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 7%;
-    background: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+
+    padding: 0 60px;
+
+    position: relative;
+    z-index: 100;
 }
 
 .logo {
@@ -45,14 +48,13 @@ header {
 
 nav {
     display: flex;
-    gap: 30px;
+    gap: 35px;
 }
 
 nav a {
+    color: white;
     text-decoration: none;
-    color: #222;
     font-size: 14px;
-    font-weight: bold;
     transition: 0.3s;
 }
 
@@ -60,282 +62,675 @@ nav a:hover {
     color: #b40000;
 }
 
-/* HOME */
+
+/* HERO */
+
 .hero {
-    min-height: 90vh;
+    min-height: 650px;
+    background: #080808;
+
+    position: relative;
+
     display: flex;
     align-items: center;
-    padding: 80px 8%;
-    position: relative;
-    background: linear-gradient(120deg, #ffffff 0%, #eeeeee 100%);
+
+    overflow: hidden;
+}
+
+.logo-mts {
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    object-fit: contain;
+
+    left: -120px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 4;
+
+    opacity: 0.95;
+
+    filter:
+        drop-shadow(
+            0 10px 25px rgba(0, 0, 0, 0.8)
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    background: #181818;
+
+    border: 2px solid #b40000;
+
+    transform: rotate(45deg);
+
+    right: 30px;
+    top: 50%;
+
+    margin-top: -260px;
+
+    opacity: 0.4;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    background: #b40000;
+
+    border-radius: 50%;
+
+    right: -230px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    opacity: 0.65;
+
+    z-index: 1;
+
+    pointer-events: none;
 }
 
 .hero-content {
-    max-width: 750px;
+    max-width: 650px;
+
+    margin-left: 260px;
+
     position: relative;
-    z-index: 2;
+
+    z-index: 5;
 }
 
 .small-title {
     color: #b40000;
+
     font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 5px;
+
+    letter-spacing: 4px;
+
     margin-bottom: 20px;
+
+    font-weight: bold;
 }
 
 .hero h1 {
-    font-size: clamp(50px, 8vw, 100px);
-    line-height: 0.95;
-    margin-bottom: 30px;
+    font-size: 90px;
+
+    line-height: 0.9;
+
+    margin-bottom: 25px;
+
+    font-weight: 800;
 }
 
 .hero p {
-    max-width: 550px;
-    font-size: 18px;
+    max-width: 500px;
+
+    color: #ccc;
+
     line-height: 1.7;
-    color: #555;
+
+    margin-bottom: 30px;
 }
 
 .button {
     display: inline-block;
-    margin-top: 35px;
-    padding: 15px 25px;
+
+    padding: 13px 25px;
+
     background: #b40000;
+
     color: white;
+
     text-decoration: none;
+
     font-weight: bold;
-    border-radius: 4px;
+
+    border-radius: 3px;
+
     transition: 0.3s;
 }
 
 .button:hover {
-    transform: translateY(-3px);
-    background: #870000;
+    background: #e00000;
+
+    transform: translateY(-2px);
 }
 
-/* SECTIONS */
+
+/* SECTION */
+
 .section {
-    padding: 110px 8%;
+    padding: 100px 8%;
+
+    background: #111;
 }
 
 .section-label {
     color: #b40000;
+
     font-size: 13px;
+
     letter-spacing: 4px;
+
     font-weight: bold;
+
     margin-bottom: 15px;
 }
 
 .section h2 {
-    font-size: clamp(40px, 6vw, 70px);
+    font-size: 48px;
+
     margin-bottom: 60px;
 }
 
-/* SEJARAH */
+
+/* STORY */
+
 .story {
     display: grid;
-    grid-template-columns: 220px 1fr;
+
+    grid-template-columns: 200px 1fr;
+
     gap: 60px;
-    max-width: 1000px;
+
+    max-width: 900px;
+
     margin-bottom: 80px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #ddd;
 }
 
 .date-box {
-    border-left: 6px solid #b40000;
+    border-left: 4px solid #b40000;
+
     padding-left: 20px;
+
     font-size: 14px;
-    font-weight: bold;
-    color: #777;
+
+    letter-spacing: 2px;
+
+    color: #aaa;
 }
 
 .date-box span {
     display: block;
+
     font-size: 70px;
-    color: #222;
-    line-height: 0.9;
+
+    color: white;
+
+    font-weight: bold;
+
+    line-height: 1;
+
     margin-bottom: 10px;
 }
 
 .story-text h3 {
-    font-size: 32px;
+    font-size: 28px;
+
     margin-bottom: 20px;
 }
 
 .story-text p {
-    max-width: 700px;
-    color: #666;
+    color: #bbb;
+
     line-height: 1.8;
+
     margin-bottom: 15px;
-    font-size: 17px;
 }
+
 
 /* KENANGAN */
+
 .memories {
-    background: #181818;
-    color: white;
+    background: #080808;
 }
 
-.memories .description {
+.description {
     color: #aaa;
+
+    max-width: 600px;
+
+    line-height: 1.7;
+
     margin-top: -35px;
-    margin-bottom: 50px;
+
+    margin-bottom: 45px;
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 20px;
 }
 
 .photo {
     height: 350px;
+
     position: relative;
+
     overflow: hidden;
+
     background: #333;
+
     border-radius: 6px;
+
+    cursor: pointer;
+
+    z-index: 1;
 }
 
 .photo img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
+
     transition: 0.5s;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.photo span {
+    position: absolute;
+
+    left: 15px;
+    bottom: 15px;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    z-index: 3;
+
+    text-shadow:
+        0 2px 5px black;
+
+    pointer-events: none;
 }
 
 .photo:hover img {
     transform: scale(1.08);
 }
 
-.photo span {
-    position: absolute;
-    left: 20px;
-    bottom: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    background: rgba(0,0,0,0.65);
-    padding: 8px 12px;
-    border-left: 4px solid #b40000;
+
+/* =========================
+   UCAPAN TERIMA KASIH
+========================= */
+
+.thanks {
+    padding: 110px 8%;
+
+    background: #050505;
+
+    display: flex;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
+.thanks::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border: 1px solid #b40000;
+
+    transform: rotate(45deg);
+
+    right: -180px;
+    top: 50%;
+
+    opacity: 0.25;
+}
+
+.thanks-card {
+    max-width: 850px;
+
+    width: 100%;
+
+    padding: 70px 60px;
+
+    background: #111;
+
+    border-top: 3px solid #b40000;
+
+    border-bottom: 3px solid #b40000;
+
+    text-align: center;
+
+    position: relative;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.quote-mark {
+    position: absolute;
+
+    top: 15px;
+    left: 35px;
+
+    font-size: 90px;
+
+    color: #b40000;
+
+    opacity: 0.35;
+
+    line-height: 1;
+}
+
+.thanks-card .section-label {
+    margin-bottom: 20px;
+}
+
+.thanks-card h2 {
+    font-size: 42px;
+
+    margin-bottom: 30px;
+}
+
+.thanks-card p {
+    color: #bbb;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    max-width: 650px;
+
+    margin: 0 auto 15px;
+}
+
+.thanks-line {
+    width: 70px;
+
+    height: 3px;
+
+    background: #b40000;
+
+    margin: 35px auto 20px;
+}
+
+.thanks-signature {
+    color: #888;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
 /* TENTANG */
+
 .about {
-    padding: 120px 8%;
-    background: white;
+    padding: 100px 8%;
+
+    background: #111;
+
     text-align: center;
 }
 
 .about h2 {
-    max-width: 900px;
-    margin: auto;
-    font-size: clamp(40px, 6vw, 75px);
-    line-height: 1;
-    margin-bottom: 35px;
+    font-size: 45px;
+
+    margin-bottom: 20px;
 }
 
-.about > p:not(.section-label) {
-    max-width: 650px;
+.about p {
+    max-width: 600px;
+
     margin: auto;
-    color: #666;
+
+    color: #aaa;
+
     line-height: 1.8;
-    font-size: 17px;
 }
 
 .timeline {
-    max-width: 700px;
-    margin: 70px auto 0;
     display: flex;
-    justify-content: space-between;
-    border-top: 3px solid #b40000;
-    padding-top: 25px;
+
+    justify-content: center;
+
+    gap: 100px;
+
+    margin-top: 50px;
 }
 
 .timeline div {
     display: flex;
+
     flex-direction: column;
-    gap: 8px;
+
+    gap: 10px;
 }
 
 .timeline strong {
     color: #b40000;
+
+    font-size: 18px;
 }
 
 .timeline span {
-    color: #777;
+    color: #aaa;
 }
 
+
 /* FOOTER */
+
 footer {
-    padding: 60px 8%;
-    background: #111;
-    color: white;
+    background: #050505;
+
     text-align: center;
+
+    padding: 60px 20px;
 }
 
 footer h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 footer p {
-    color: #999;
-    margin-bottom: 25px;
+    color: #b40000;
+
+    margin-bottom: 20px;
 }
 
 .red-line {
-    width: 100px;
-    height: 4px;
+    width: 60px;
+
+    height: 3px;
+
     background: #b40000;
-    margin: 0 auto 25px;
+
+    margin: 0 auto 20px;
 }
 
 footer small {
-    color: #666;
+    color: #777;
 }
 
-/* HP */
-@media (max-width: 700px) {
+
+/* LIGHTBOX */
+
+.lightbox {
+    display: none;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.96);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    z-index: 999999;
+}
+
+.lightbox img {
+    max-width: 90vw;
+
+    max-height: 85vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 50px rgba(0, 0, 0, 0.8);
+}
+
+.close {
+    position: absolute;
+
+    top: 15px;
+    right: 30px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 50px;
+
+    line-height: 50px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 1000000;
+}
+
+.close:hover {
+    color: #b40000;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
 
     header {
-        height: 65px;
-        padding: 0 5%;
-    }
-
-    .logo {
-        font-size: 22px;
+        padding: 0 20px;
     }
 
     nav {
-        gap: 12px;
+        gap: 15px;
     }
 
     nav a {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .hero {
-        min-height: 90vh;
-        padding: 60px 7%;
+        min-height: 600px;
+    }
+
+    .logo-mts {
+        width: 330px;
+        height: 330px;
+
+        left: -120px;
+    }
+
+    .hero-content {
+        margin-left: 0;
+
+        padding-left: 100px;
+
+        padding-right: 20px;
+
+        z-index: 5;
     }
 
     .hero h1 {
-        font-size: 55px;
+        font-size: 65px;
     }
 
-    .hero p {
-        font-size: 16px;
+    .hero::before {
+        width: 330px;
+        height: 330px;
+
+        right: -80px;
+
+        margin-top: -165px;
+    }
+
+    .hero::after {
+        width: 330px;
+        height: 330px;
+
+        right: -180px;
     }
 
     .section {
-        padding: 80px 7%;
+        padding: 70px 20px;
+    }
+
+    .section h2 {
+        font-size: 38px;
     }
 
     .story {
         grid-template-columns: 1fr;
-        gap: 30px;
+
+        gap: 25px;
+    }
+
+    .date-box span {
+        font-size: 55px;
     }
 
     .gallery {
@@ -343,12 +738,59 @@ footer small {
     }
 
     .photo {
-        height: 400px;
+        height: 300px;
     }
+
+
+    /* UCAPAN */
+
+    .thanks {
+        padding: 70px 20px;
+    }
+
+    .thanks-card {
+        padding: 60px 25px;
+    }
+
+    .thanks-card h2 {
+        font-size: 32px;
+    }
+
+    .thanks-card p {
+        font-size: 15px;
+    }
+
+    .quote-mark {
+        left: 15px;
+        top: 10px;
+    }
+
+
+    /* LIGHTBOX */
+
+    .lightbox {
+        padding: 15px;
+    }
+
+    .lightbox img {
+        max-width: 95vw;
+
+        max-height: 80vh;
+    }
+
+    .close {
+        top: 10px;
+
+        right: 15px;
+
+        font-size: 45px;
+    }
+
 
     .timeline {
         flex-direction: column;
+
         gap: 30px;
-        text-align: left;
     }
+
 }
